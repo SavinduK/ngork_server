@@ -4,7 +4,8 @@ from pyngrok import ngrok,conf
 import qrcode
 import qrcode.console_scripts  # for ASCII output
 
-UPLOAD_FOLDER = "uploads"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+UPLOAD_FOLDER = os.path.join(BASE_DIR, "uploads")
 PORT = 5000
 
 # Create upload folder if missing
@@ -63,3 +64,4 @@ if __name__ == "__main__":
 
     # Run the server
     app.run(port=PORT)
+
